@@ -23,7 +23,12 @@ stages:
     - script: npm install -g vercel 
       displayName: Instalando Vercel
     
-    - script: vercel --token AKJ2m1t2qARHp4FE9Sv7a8Qq --prod
-      displayName: Deploy para o Vercel
+    - task: vercel-deployment-task@1
+      displayName: Deploy para o vercel
+      inputs:
+        vercelProjectId: 'prj_5ZDP7WTWgzAROq6mJkVyjYc8xJuX'
+        vercelOrgId: 'qKriBgs7YOxYvGuWSPhpQv4X'
+        vercelToken: 'AKJ2m1t2qARHp4FE9Sv7a8Qq'
+        production: true
 
 
