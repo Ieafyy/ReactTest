@@ -1,0 +1,25 @@
+name: 'PIPELINE REACT (VERCEL)'
+
+trigger: none
+
+pool:
+  vmImage: 'windows-latest'
+
+stages:
+- stage: build
+  jobs:
+  - job:
+    displayName: Iniciando dependencias
+    steps:
+    - task: NodeTool@0
+      displayName: Instalando Node
+      inputs:
+        versionSource: 'spec'
+        versionSpec:
+        checkLatest: true
+
+    - script: npm install
+      displayName: Instalando pacotes
+      
+
+
