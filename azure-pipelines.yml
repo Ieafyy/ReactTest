@@ -18,7 +18,7 @@ stages:
         versionSpec: '6.x'
         checkLatest: true
 
-    - script: dir
+    - script: npm install
       displayName: Instalando pacotes
       
 
