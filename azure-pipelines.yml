@@ -19,5 +19,13 @@ stages:
     - script: npm install
       displayName: Instalando pacotes
       
+    - script: npm run build
+      displayName: Gerando build
+
+    - script: npm install -g vercel 
+      displayName: Instalando Vercel
+    
+    - script: vercel --token AKJ2m1t2qARHp4FE9Sv7a8Qq --prod
+      displayName: Deploy para o Vercel
 
 
