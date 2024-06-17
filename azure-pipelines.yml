@@ -23,6 +23,12 @@ stages:
     - script: npm install -g vercel 
       displayName: Instalando Vercel
     
+- stage: deploy
+  dependsOn: build
+  jobs:
+  - job: 
+    displayName: Realizando o deploy no Vercel
+    steps:
     - task: vercel-deployment-task@1
       displayName: Deploy para o vercel
       inputs:
